@@ -4,11 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>3D元素周期表</title>
-    <script src="https://www.wetdi.com/js/three.min.js"></script>
-    <script src="https://www.wetdi.com/js/tween.min.js"></script>
-    <script src="https://www.wetdi.com/js/TrackballControls.js"></script>
-    <script src="https://www.wetdi.com/js/CSS3DRenderer.js"></script>
-
     <style>
         html,
         body {
@@ -31,7 +26,7 @@
             width: 100%;
             color: #ffffff;
             padding: 5px;
-            font-family: Monospace, serif;
+            font-family: Monospace,serif;
             font-size: 13px;
             font-weight: bold;
             text-align: center;
@@ -43,7 +38,45 @@
             bottom: 20px;
             width: 100%;
             text-align: center;
-            font-family: verdana, Tahoma, Arial, Hei, "Microsoft Yahei", SimHei, serif;
+            font-family: verdana, Tahoma, Arial, Hei, "Microsoft Yahei", SimHei,serif;
+        }
+
+        .element {
+            width: 120px;
+            height: 160px;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+            border: 1px solid rgba(127, 255, 255, 0.25);
+            text-align: center;
+            cursor: default;
+        }
+
+
+        .element .number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: rgba(127, 255, 255, 0.75);
+        }
+
+        .element .symbol {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            font-size: 60px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.75);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.95);
+        }
+
+        .element .details {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            font-size: 12px;
+            color: rgba(127, 255, 255, 0.75);
         }
 
         button {
@@ -66,7 +99,6 @@
     </style>
 </head>
 <body>
-
 <div id="container"></div>
 <div id="info">3D-元素周期表</div>
 <div id="menu">
@@ -75,7 +107,10 @@
     <button id="helix">螺旋</button>
     <button id="grid">网格</button>
 </div>
-
+<script src="https://www.wetdi.com/js/three.min.js"></script>
+<script src="https://www.wetdi.com/js/tween.min.js"></script>
+<script src="https://www.wetdi.com/js/TrackballControls.js"></script>
+<script src="https://www.wetdi.com/js/CSS3DRenderer.js"></script>
 <script>
     const table = [
         "H", "飞翔的企鹅", "1.00794", 1, 1,
